@@ -1,10 +1,10 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const { sequelize } = require('./models');
-const { server } = require('./server');
+const { sequelize } = require("./models");
+const { server } = require("./server");
 
 const port = process.env.PORT || 3000;
 server.listen(port, async () => {
-  await sequilize.sync();
+  await sequelize.sync();
   console.log(`Listening on ${port}`);
 });
