@@ -3,12 +3,12 @@ const { userRoutes } = require("./routes/user.route");
 
 const server = express();
 
-server.use(logger); //what is logger?
+server.use(logger);
 server.use(express.json());
 
 server.get("/hello", (_, res) => res.send("Hello!"));
 server.use((req, res, next) => {
-  if (req.method === "GET" && req.path.startsWith("/hello")) {
+  if (req.method === "GET" && req.path.startsWith("/hello")) { //&& will be true if and only if all the operands are true 
     res.send("Hi there!");
   } else {
     next();
